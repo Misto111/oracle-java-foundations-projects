@@ -5,14 +5,29 @@ public class Customer {
     private String name;
     private String size;
 
-    private Clothing [] items;
+    private Clothing[] items;
 
     public Customer() {
 
     }
 
-    public void addItems(Clothing [] items) {
-        this.items = items;
+    public void addItems(Clothing[] someItems) {
+        items = someItems;
+    }
+
+    public Clothing[] getItems() {
+        return items;
+    }
+
+    public double getTotalClothingCost() {
+
+        double total = 0;
+        for (Clothing item : items) {
+
+            total = total + item.getPrice();
+      }
+
+        return total;
     }
 
     public String getName() {
@@ -56,6 +71,9 @@ public class Customer {
     public String toString() {
         return "Customer " +
                 "name= '" + name + '\'' +
-                ", size= '" + size + '\'';
+                ", size= '" + size + '\'' +
+                ", " +
+                "Total price = " + getTotalClothingCost() +
+                "$";
     }
 }

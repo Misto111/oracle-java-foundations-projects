@@ -49,6 +49,7 @@ public class Clothing {
     public String toString() {
         return description + '\'' +
                 ", price= " + price +
+                "$" +
                 ", size= '" + size + '\'';
     }
 }

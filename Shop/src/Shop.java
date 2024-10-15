@@ -15,11 +15,12 @@ public class Shop {
         int measurement = Integer.parseInt(sc.nextLine());
 
 
+
         Customer customer = new Customer();
         customer.setName("Pinky");
         customer.setSize(measurement);
 
-        System.out.println(customer);
+
 
         Clothing item1 = new Clothing();
         Clothing item2 = new Clothing();
@@ -36,7 +37,6 @@ public class Shop {
         items[3].setSize("S");
 
 
-
         item1.setDescription("Blue Jacket");
         item1.setPrice(20.9);
         item1.setSize("M");
@@ -45,28 +45,20 @@ public class Shop {
         item2.setPrice(12.6);
         item2.setSize("S");
 
+        customer.addItems(items);
+
+        System.out.println(customer);
+
+        for (Clothing item : customer.getItems()) {
 
 
+            System.out.println("Item: " + item);
 
-
-        for (Clothing item : items) {
-
-            if(customer.getSize().equals(item.getSize())) {
-                total = total + item.getPrice();
-                System.out.println("Clothing item: " + item);
-
-                if (total > 15) {
-                    break;
-                }
-
-            }
+            //System.out.printf("Total price %.2f", total);
 
         }
-
-        System.out.printf("Total price %.2f", total);
-
-
-
     }
+
 }
+
 
