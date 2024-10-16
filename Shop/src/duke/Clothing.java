@@ -1,6 +1,6 @@
 package duke;
 
-public class Clothing {
+public class Clothing implements  Comparable<Clothing>{
 
     private String description;
     private double price;
@@ -8,6 +8,8 @@ public class Clothing {
 
     public final static double MIN_PRICE = 10;
     public final static double TAX_RATE = 0.2;
+
+    Customer customer;
 
 
     public Clothing(String description, double price, String aSize) {
@@ -58,5 +60,11 @@ public class Clothing {
                 ", price= " + price +
                 "$" +
                 ", size= '" + size + '\'';
+    }
+
+    @Override
+    public int compareTo(Clothing o) {
+
+        return this.description.compareTo(o.description);
     }
 }

@@ -1,6 +1,7 @@
 import duke.Clothing;
 import duke.Customer;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Shop {
@@ -39,12 +40,11 @@ public class Shop {
             System.out.println("Item: " + item);
 
             //System.out.printf("Total price %.2f", total);
-
         }
 
         try {
             average = (count == 0) ? 0 : average / count;
-           // average /= count;
+            // average /= count;
             System.out.println("Average price " + average + ", Count " + count);
         } catch (ArithmeticException e) {
             System.out.println("Don't divide by zero!");
@@ -52,6 +52,19 @@ public class Shop {
             System.out.println("Goodbye!");
         }
 
+        Arrays.sort(customer.getItems());
+        for (Clothing item : customer.getItems()) {
+
+            if (item.getSize().equals("L")) {
+
+                count++;
+                average += item.getPrice();
+            }
+
+            System.out.println("Item: " + item);
+
+            //System.out.printf("Total price %.2f", total);
+        }
 
     }
 
