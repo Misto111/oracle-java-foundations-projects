@@ -25,14 +25,33 @@ public class Shop {
 
         System.out.println(customer);
 
+        int average = 0;
+        int count = 0;
+
         for (Clothing item : customer.getItems()) {
 
+            if (item.getSize().equals("L")) {
+
+                count++;
+                average += item.getPrice();
+            }
 
             System.out.println("Item: " + item);
 
             //System.out.printf("Total price %.2f", total);
 
         }
+
+        try {
+            average = (count == 0) ? 0 : average / count;
+           // average /= count;
+            System.out.println("Average price " + average + ", Count " + count);
+        } catch (ArithmeticException e) {
+            System.out.println("Don't divide by zero!");
+        } finally {
+            System.out.println("Goodbye!");
+        }
+
 
     }
 
