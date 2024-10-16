@@ -14,36 +14,12 @@ public class Shop {
         double total = 0.00;
         int measurement = Integer.parseInt(sc.nextLine());
 
+        Customer customer = new Customer("Pinky", "S", measurement);
 
+        Clothing item1 = new Clothing("Green Scarf", 5, "S");
+        Clothing item2 = new Clothing("Blue T-Shirt", 10.5, "S");
 
-        Customer customer = new Customer();
-        customer.setName("Pinky");
-        customer.setSize(measurement);
-
-
-
-        Clothing item1 = new Clothing();
-        Clothing item2 = new Clothing();
-
-
-        Clothing[] items = {item1, item2, new Clothing(), new Clothing()};
-
-        items[2].setDescription("Green Scarf");
-        items[2].setPrice(5.0);
-        items[2].setSize("S");
-
-        items[3].setDescription("Blue T-Shirt");
-        items[3].setPrice(10.5);
-        items[3].setSize("S");
-
-
-        item1.setDescription("Blue Jacket");
-        item1.setPrice(20.9);
-        item1.setSize("M");
-
-        item2.setDescription("Orange T-Shirt");
-        item2.setPrice(12.6);
-        item2.setSize("S");
+        Clothing[] items = {item1, item2, new Clothing("Blue Jacket", 20.9, "M"), new Clothing("Orange T-Shirt", 12.6, "S")};
 
         customer.addItems(items);
 

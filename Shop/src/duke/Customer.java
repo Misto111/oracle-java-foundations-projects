@@ -4,11 +4,14 @@ public class Customer {
 
     private String name;
     private String size;
+    private int measurement;
 
     private Clothing[] items;
 
-    public Customer() {
-
+    public Customer(String name, String size, int measurement) {
+        this.name = name;
+        this.size = size;
+        this.measurement = measurement;
     }
 
     public void addItems(Clothing[] someItems) {
