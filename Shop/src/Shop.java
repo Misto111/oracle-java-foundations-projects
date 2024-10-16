@@ -9,9 +9,9 @@ public class Shop {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome to Duke Choice Shop");
+        System.out.println("Minimum price = " + Clothing.MIN_PRICE + "$");
+        System.out.println("Type your size below:");
 
-        double tax = 0.02;
-        double total = 0.00;
         int measurement = Integer.parseInt(sc.nextLine());
 
         Customer customer = new Customer("Pinky", "S", measurement);
@@ -33,6 +33,7 @@ public class Shop {
             //System.out.printf("Total price %.2f", total);
 
         }
+
     }
 
 }
